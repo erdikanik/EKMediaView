@@ -16,6 +16,15 @@
 		873E5EBF1E25316500857761 /* EKMediaViewExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873E5EBE1E25316500857761 /* EKMediaViewExampleUITests.swift */; };
 		873E5ECF1E2534A300857761 /* EKMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873E5ECE1E2534A300857761 /* EKMedia.swift */; };
 		873E5ED11E2534B900857761 /* EKMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873E5ED01E2534B900857761 /* EKMediaView.swift */; };
+		8776686A1E40C8110087A4B7 /* EKListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877668681E40C8110087A4B7 /* EKListTableViewCell.swift */; };
+		8776686B1E40C8110087A4B7 /* EKListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 877668691E40C8110087A4B7 /* EKListTableViewCell.xib */; };
+		8776686D1E40CDE20087A4B7 /* MediaListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8776686C1E40CDE20087A4B7 /* MediaListTableViewController.swift */; };
+		87A96DBD1E337CEA00D36B0E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87A96DB81E337CEA00D36B0E /* 1.jpg */; };
+		87A96DBE1E337CEA00D36B0E /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87A96DB91E337CEA00D36B0E /* 2.jpg */; };
+		87A96DBF1E337CEA00D36B0E /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87A96DBA1E337CEA00D36B0E /* 3.jpg */; };
+		87A96DC01E337CEA00D36B0E /* video_1mb.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 87A96DBB1E337CEA00D36B0E /* video_1mb.mp4 */; };
+		87A96DC11E337CEA00D36B0E /* video_5mb.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 87A96DBC1E337CEA00D36B0E /* video_5mb.mp4 */; };
+		87A96DC31E337D0E00D36B0E /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A96DC21E337D0E00D36B0E /* MockManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,15 @@
 		873E5EC01E25316500857761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		873E5ECE1E2534A300857761 /* EKMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKMedia.swift; sourceTree = "<group>"; };
 		873E5ED01E2534B900857761 /* EKMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKMediaView.swift; sourceTree = "<group>"; };
+		877668681E40C8110087A4B7 /* EKListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKListTableViewCell.swift; sourceTree = "<group>"; };
+		877668691E40C8110087A4B7 /* EKListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKListTableViewCell.xib; sourceTree = "<group>"; };
+		8776686C1E40CDE20087A4B7 /* MediaListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaListTableViewController.swift; sourceTree = "<group>"; };
+		87A96DB81E337CEA00D36B0E /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		87A96DB91E337CEA00D36B0E /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		87A96DBA1E337CEA00D36B0E /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		87A96DBB1E337CEA00D36B0E /* video_1mb.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1mb.mp4; sourceTree = "<group>"; };
+		87A96DBC1E337CEA00D36B0E /* video_5mb.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_5mb.mp4; sourceTree = "<group>"; };
+		87A96DC21E337D0E00D36B0E /* MockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +119,17 @@
 		873E5E9D1E25316500857761 /* EKMediaViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				877668671E40C7CD0087A4B7 /* Cells */,
+				87A96DB71E3379D100D36B0E /* Resources */,
 				873E5ECD1E25344200857761 /* EKMediaView */,
+				87A96DB61E3377FE00D36B0E /* Mock */,
 				873E5E9E1E25316500857761 /* AppDelegate.swift */,
 				873E5EA01E25316500857761 /* ViewController.swift */,
 				873E5EA21E25316500857761 /* Main.storyboard */,
 				873E5EA51E25316500857761 /* Assets.xcassets */,
 				873E5EA71E25316500857761 /* LaunchScreen.storyboard */,
 				873E5EAA1E25316500857761 /* Info.plist */,
+				8776686C1E40CDE20087A4B7 /* MediaListTableViewController.swift */,
 			);
 			path = EKMediaViewExample;
 			sourceTree = "<group>";
@@ -138,6 +160,35 @@
 			);
 			name = EKMediaView;
 			path = ../../EKMediaView;
+			sourceTree = "<group>";
+		};
+		877668671E40C7CD0087A4B7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				877668681E40C8110087A4B7 /* EKListTableViewCell.swift */,
+				877668691E40C8110087A4B7 /* EKListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		87A96DB61E3377FE00D36B0E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				87A96DC21E337D0E00D36B0E /* MockManager.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		87A96DB71E3379D100D36B0E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				87A96DB81E337CEA00D36B0E /* 1.jpg */,
+				87A96DB91E337CEA00D36B0E /* 2.jpg */,
+				87A96DBA1E337CEA00D36B0E /* 3.jpg */,
+				87A96DBB1E337CEA00D36B0E /* video_1mb.mp4 */,
+				87A96DBC1E337CEA00D36B0E /* video_5mb.mp4 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +298,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A96DC01E337CEA00D36B0E /* video_1mb.mp4 in Resources */,
 				873E5EA91E25316500857761 /* LaunchScreen.storyboard in Resources */,
+				87A96DBD1E337CEA00D36B0E /* 1.jpg in Resources */,
+				87A96DBE1E337CEA00D36B0E /* 2.jpg in Resources */,
+				87A96DBF1E337CEA00D36B0E /* 3.jpg in Resources */,
+				8776686B1E40C8110087A4B7 /* EKListTableViewCell.xib in Resources */,
 				873E5EA61E25316500857761 /* Assets.xcassets in Resources */,
+				87A96DC11E337CEA00D36B0E /* video_5mb.mp4 in Resources */,
 				873E5EA41E25316500857761 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,8 +332,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				873E5ECF1E2534A300857761 /* EKMedia.swift in Sources */,
+				8776686A1E40C8110087A4B7 /* EKListTableViewCell.swift in Sources */,
 				873E5EA11E25316500857761 /* ViewController.swift in Sources */,
 				873E5E9F1E25316500857761 /* AppDelegate.swift in Sources */,
+				8776686D1E40CDE20087A4B7 /* MediaListTableViewController.swift in Sources */,
+				87A96DC31E337D0E00D36B0E /* MockManager.swift in Sources */,
 				873E5ED11E2534B900857761 /* EKMediaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +580,7 @@
 				873E5EC51E25316500857761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		873E5EC61E25316500857761 /* Build configuration list for PBXNativeTarget "EKMediaViewExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +589,7 @@
 				873E5EC81E25316500857761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		873E5EC91E25316500857761 /* Build configuration list for PBXNativeTarget "EKMediaViewExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +598,7 @@
 				873E5ECB1E25316500857761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+enum EKMediaType {
+    case Image
+    case Video
+}
+
+
+struct EKMedia {
+    
+    /// Media type
+    var type:EKMediaType
+    
+    /// File url
+    var url:String
+}
