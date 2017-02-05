@@ -11,6 +11,7 @@ import UIKit
 class EKListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mediaView: EKMediaView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +27,6 @@ class EKListTableViewCell: UITableViewCell {
     func setMedia(media:EKMedia) {
         
         mediaView.medias = [media]
-        mediaView.layoutSubviews()
         mediaView.pageControl.isHidden = true
     }
     

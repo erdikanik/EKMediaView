@@ -28,7 +28,7 @@ class MediaListTableViewController: UITableViewController {
     func setTableViewProperties() {
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 200
         
         tableView .register(UINib.init(nibName: "EKListTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "EKListTableViewCell")
     }
@@ -42,14 +42,18 @@ class MediaListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:EKListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "EKListTableViewCell", for: indexPath) as! EKListTableViewCell
         
         let media = MockManager().mediaViews()[indexPath.row]
+        
+        cell.layoutIfNeeded()
         cell.setMedia(media: media)
+        
+        cell.titleLabel.text = "Index: \(indexPath.row)"
         //cell.mediaView.muted = true
         
         return cell

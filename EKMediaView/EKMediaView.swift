@@ -21,39 +21,31 @@ class EKMediaView: UIView, UIScrollViewDelegate {
     let pageControl:UIPageControl = UIPageControl()
     
     var playerItems:[AVPlayerItem]?
-    var players:[AVPlayer]?
+    var players:[AVPlayer] = [AVPlayer]()
     
     var delegate: EKMediaViewDelegate?
 
-    var stopAll:Bool? {
+    var stopAll:Bool = false {
         didSet {
-        
-            guard let stopAll = stopAll else {
-                return
-            }
-            
-            if let players = players {
+            for player in players {
                 
-                for player in players {
+                if stopAll {
+                    player.seek(to: kCMTimeZero)
+                    player.pause()
+                }
+                else {
                     
-                    if stopAll {
+                    if pageControl.currentPage == currentPlayerIndex(index: pageControl.currentPage) {
+                        
                         player.seek(to: kCMTimeZero)
-                        player.pause()
-                    }
-                    else {
-                    
-                        if pageControl.currentPage == currentPlayerIndex(index: pageControl.currentPage) {
-                            
-                            player.seek(to: kCMTimeZero)
-                            player.play()
-                        }
+                        player.play()
                     }
                 }
             }
         }
     }
     
-    var muted:Bool? {
+    var muted:Bool? = false {
         
         didSet {
             
@@ -61,11 +53,9 @@ class EKMediaView: UIView, UIScrollViewDelegate {
                 return
             }
             
-            if let players = players {
-                for player in players {
-                    
-                    player.isMuted = muted
-                }
+            for player in players {
+                
+                player.isMuted = muted
             }
         }
     }
@@ -73,15 +63,18 @@ class EKMediaView: UIView, UIScrollViewDelegate {
     var medias:[EKMedia]? {
         
         didSet {
-            layoutIfNeeded()
-            
             if let medias = medias {
             
+                layoutIfNeeded()
+                layoutSubviews()
+                
                 pageControl.numberOfPages = medias.count
                 pageControl.currentPage = 0
                 
                 initializePlayerItems()
                 setContentScrollView()
+                
+                layoutSubviews()
             }
         }
     }
@@ -97,8 +90,7 @@ class EKMediaView: UIView, UIScrollViewDelegate {
             pageControl.currentPage = selectedPage
             
             stopPlayer()
-            
-            
+
         }
     }
     
@@ -142,7 +134,7 @@ fileprivate extension EKMediaView {
             let playerItem = playerItems?[currentPlayerIndex(index: index)]
             let player = AVPlayer(playerItem: playerItem)
         
-            players?.append(player)
+            players.append(player)
             
             if index == 0 {
                 
@@ -157,12 +149,10 @@ fileprivate extension EKMediaView {
             playerLayer.frame = bounds
             playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
             
-            videoBackground.layer .addSublayer(playerLayer)
+            videoBackground.layer.addSublayer(playerLayer)
             
             return videoBackground
         }
-        
-        return nil
     }
 }
 
@@ -188,11 +178,11 @@ fileprivate extension EKMediaView {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { [weak self] notification in
             
-            guard let players = self?.players, players.count > 0 else {
+            guard let players = self?.players, players.count > 0, let stopAll = self?.stopAll else {
                 return
             }
             
-            if (self?.stopAll)! {
+            if !stopAll {
                 
                 if let currentPage = self?.pageControl.currentPage,
                     let index = self?.currentPlayerIndex(index: currentPage) {
@@ -233,10 +223,6 @@ fileprivate extension EKMediaView {
 fileprivate extension EKMediaView {
     
     fileprivate func stopPlayer() {
-    
-        guard let players = players else {
-            return
-        }
         
         for player in players {
             
@@ -272,7 +258,7 @@ fileprivate extension EKMediaView {
     
     fileprivate func setMedia(selectedPage:Int) {
     
-        guard let medias = medias, let players = players else {
+        guard let medias = medias else {
             return
         }
         
@@ -308,12 +294,14 @@ fileprivate extension EKMediaView {
     private func setScrollViewConstraints() {
         
         addSubview(scrollview)
-        translatesAutoresizingMaskIntoConstraints = false
+        scrollview.translatesAutoresizingMaskIntoConstraints = false
     
         scrollview.widthAnchor.constraint(equalTo: widthAnchor, multiplier:1).isActive = true
         scrollview.heightAnchor.constraint(equalTo: heightAnchor, multiplier:1).isActive = true
         scrollview.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         scrollview.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        scrollview.backgroundColor = UIColor.green;
     }
     
     private func setScrollViewProperties() {
