@@ -32,13 +32,50 @@ class MockManager {
             mediaArray.append(ekmedia)
         }
         
-        if let url = Bundle.main.path(forResource: "video_5mb", ofType: "mp4") {
+        if let url = Bundle.main.path(forResource: "train", ofType: "mov") {
             
             let ekmedia = EKMedia(type: .Video, url: url)
             mediaArray.append(ekmedia)
         }
         
         if let url = Bundle.main.path(forResource: "3", ofType: "jpg") {
+            
+            let ekmedia = EKMedia(type: .Image, url: url)
+            mediaArray.append(ekmedia)
+        }
+        
+        return mediaArray
+    }
+    
+    func mediaViews2()-> [EKMedia] {
+        
+        var mediaArray = [EKMedia]()
+        
+        if let url = Bundle.main.path(forResource: "4", ofType: "jpg") {
+            
+            let ekmedia = EKMedia(type: .Image, url: url)
+            mediaArray.append(ekmedia)
+        }
+        
+        if let url = Bundle.main.path(forResource: "train", ofType: "mp4") {
+            
+            let ekmedia = EKMedia(type: .Video, url: url)
+            mediaArray.append(ekmedia)
+        }
+        
+        if let url = Bundle.main.path(forResource: "5", ofType: "jpg") {
+            
+            let ekmedia = EKMedia(type: .Image, url: url)
+            mediaArray.append(ekmedia)
+        }
+        
+        if let url = Bundle.main.path(forResource: "dance", ofType: "mp4") {
+            
+            let ekmedia = EKMedia(type: .Video, url: url)
+            mediaArray.append(ekmedia)
+        }
+        
+        if let url = Bundle.main.path(forResource: "6", ofType: "jpg") {
             
             let ekmedia = EKMedia(type: .Image, url: url)
             mediaArray.append(ekmedia)

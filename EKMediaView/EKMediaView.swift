@@ -300,8 +300,6 @@ fileprivate extension EKMediaView {
         scrollview.heightAnchor.constraint(equalTo: heightAnchor, multiplier:1).isActive = true
         scrollview.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         scrollview.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        
-        scrollview.backgroundColor = UIColor.green;
     }
     
     private func setScrollViewProperties() {
@@ -316,12 +314,12 @@ fileprivate extension EKMediaView {
 
     private func setPageControlConstraints() {
         
-//        addSubview(pageControl)
-//        translatesAutoresizingMaskIntoConstraints = false
-//        
-//        pageControl.centerXAnchor .constraint(equalTo: centerXAnchor).isActive = true
-//        pageControl.bottomAnchor .constraint(equalTo: bottomAnchor, constant: EKMediaView.kPageControlBottomConstant).isActive = true
-//    
-//        pageControl.currentPage = 0
+        addSubview(pageControl)
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        pageControl.centerXAnchor .constraint(equalTo: centerXAnchor).isActive = true
+        pageControl.bottomAnchor .constraint(equalTo: bottomAnchor, constant: EKMediaView.kPageControlBottomConstant).isActive = true
+    
+        pageControl.currentPage = 0
     }
 }

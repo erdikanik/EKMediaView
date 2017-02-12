@@ -42,7 +42,7 @@ class MediaListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return MockManager().mediaViews().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,17 +54,26 @@ class MediaListTableViewController: UITableViewController {
         cell.setMedia(media: media)
         
         cell.titleLabel.text = "Index: \(indexPath.row)"
-        //cell.mediaView.muted = true
+        cell.mediaView.muted = true
         
         return cell
     }
 
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        
-//        let cell:EKListTableViewCell = cell as! EKListTableViewCell
-//        
-//        if let mediaView = cell.mediaView {
-//            mediaView.stopAll = true
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let cell:EKListTableViewCell = cell as! EKListTableViewCell
+        
+        if let mediaView = cell.mediaView {
+            mediaView.stopAll = false
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let cell:EKListTableViewCell = cell as! EKListTableViewCell
+        
+        if let mediaView = cell.mediaView {
+            mediaView.stopAll = true
+        }
+    }
 }
