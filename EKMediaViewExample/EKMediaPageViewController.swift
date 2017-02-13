@@ -16,10 +16,23 @@ class EKMediaPageViewController: UIViewController, EKMediaViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        automaticallyAdjustsScrollViewInsets = false
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        initializeMediaView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        mediaView.stopAll = true
+        mediaView = nil
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,13 +40,23 @@ class EKMediaPageViewController: UIViewController, EKMediaViewDelegate {
     
     // MARK: EKMediaViewDelegate
     func mediaViewPageDidChange(mediaView: EKMediaView, currentMedia: EKMedia, pageIndex: Int) {
-        
-        
+    
+        if let muted = mediaView.muted {
+            muteButton.isHidden = currentMedia.type == .Image
+            muteButton.setBackgroundImage(UIImage(named:"mute"), for: .normal)
+            
+            if !muted {
+                mediaView.muted = true
+            }
+        }
+    }
+    
+    @IBAction func mediaViewTapped(_ sender: UITapGestureRecognizer) {
+        switchMuteButton()
     }
     
     @IBAction func muteButtonTapped(_ sender: Any) {
-        
-        self.muteButton.isSelected = !self.muteButton.isSelected
+        switchMuteButton()
     }
 }
 
@@ -43,7 +66,23 @@ extension EKMediaPageViewController {
         
         mediaView.muted = true
         mediaView.delegate = self
-    
+        mediaView.medias = MockManager().mediaViews2()
+        mediaView.muted = true
+        mediaView.selectedPage = 0
+        
+        muteButton.isHidden = mediaView!.medias![0].type == .Image
     }
 
+    func switchMuteButton()
+    {
+        if let muted = mediaView.muted {
+            self.mediaView.muted = !muted
+            
+            if !muted {
+                muteButton.setBackgroundImage(UIImage(named:"mute"), for: .normal)
+            } else {
+                muteButton.setBackgroundImage(UIImage(named:"high_volume"), for:.normal)
+            }
+        }
+    }
 }

@@ -57,7 +57,7 @@ class MockManager {
             mediaArray.append(ekmedia)
         }
         
-        if let url = Bundle.main.path(forResource: "train", ofType: "mp4") {
+        if let url = Bundle.main.path(forResource: "train", ofType: "mov") {
             
             let ekmedia = EKMedia(type: .Video, url: url)
             mediaArray.append(ekmedia)
@@ -69,7 +69,7 @@ class MockManager {
             mediaArray.append(ekmedia)
         }
         
-        if let url = Bundle.main.path(forResource: "dance", ofType: "mp4") {
+        if let url = Bundle.main.path(forResource: "dance", ofType: "mov") {
             
             let ekmedia = EKMedia(type: .Video, url: url)
             mediaArray.append(ekmedia)

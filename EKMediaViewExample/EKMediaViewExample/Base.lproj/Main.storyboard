@@ -95,27 +95,26 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-ov-O1D" customClass="EKMediaView" customModule="EKMediaViewExample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="300"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxZ-Lp-gin">
-                                        <rect key="frame" x="347" y="272" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Gkm-sz-a6S"/>
-                                            <constraint firstAttribute="width" constant="20" id="b6f-mG-pLa"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="high_volume"/>
-                                        <state key="selected" image="mute"/>
-                                        <connections>
-                                            <action selector="muteButtonTapped:" destination="7Ub-CX-dJw" eventType="touchDragInside" id="HCO-3M-YsC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="pxZ-Lp-gin" secondAttribute="trailing" constant="8" id="33b-vh-EjN"/>
                                     <constraint firstAttribute="height" constant="300" id="jV8-vY-jKd"/>
-                                    <constraint firstAttribute="bottom" secondItem="pxZ-Lp-gin" secondAttribute="bottom" constant="8" id="rZV-Zq-msj"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Q53-Ta-fqd" appends="YES" id="PjX-DA-omq"/>
+                                </connections>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxZ-Lp-gin">
+                                <rect key="frame" x="319" y="324" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Gkm-sz-a6S"/>
+                                    <constraint firstAttribute="width" constant="20" id="b6f-mG-pLa"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="mute"/>
+                                <connections>
+                                    <action selector="muteButtonTapped:" destination="7Ub-CX-dJw" eventType="touchUpInside" id="tAu-4h-ldw"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kam-jK-hSa" userLabel="Content">
                                 <rect key="frame" x="36" y="344" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -125,7 +124,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pxZ-Lp-gin" secondAttribute="trailing" constant="20" id="5Rh-hk-ymG"/>
                             <constraint firstItem="kam-jK-hSa" firstAttribute="leading" secondItem="Te5-SP-7Wz" secondAttribute="leadingMargin" constant="20" id="6Gx-5K-QqW"/>
+                            <constraint firstItem="pxZ-Lp-gin" firstAttribute="top" secondItem="xWk-ov-O1D" secondAttribute="bottom" constant="-40" id="E51-LQ-2e1"/>
                             <constraint firstAttribute="trailing" secondItem="xWk-ov-O1D" secondAttribute="trailing" id="UY1-W1-Xlj"/>
                             <constraint firstItem="xWk-ov-O1D" firstAttribute="leading" secondItem="Te5-SP-7Wz" secondAttribute="leading" id="YL1-ag-UYv"/>
                             <constraint firstItem="xWk-ov-O1D" firstAttribute="top" secondItem="8h4-5s-GVS" secondAttribute="bottom" id="vGi-9A-d9c"/>
@@ -139,12 +140,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Dg-KX-TUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Q53-Ta-fqd">
+                    <connections>
+                        <action selector="mediaViewTapped:" destination="7Ub-CX-dJw" id="1tD-uU-vgk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1036" y="419"/>
         </scene>
     </scenes>
     <resources>
-        <image name="high_volume" width="20" height="20"/>
         <image name="mute" width="20" height="20"/>
     </resources>
 </document>

@@ -18,6 +18,7 @@
 		8776686A1E40C8110087A4B7 /* EKListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877668681E40C8110087A4B7 /* EKListTableViewCell.swift */; };
 		8776686B1E40C8110087A4B7 /* EKListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 877668691E40C8110087A4B7 /* EKListTableViewCell.xib */; };
 		8776686D1E40CDE20087A4B7 /* MediaListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8776686C1E40CDE20087A4B7 /* MediaListTableViewController.swift */; };
+		8778FC151E524B6500516D24 /* dance.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8778FC141E524B6500516D24 /* dance.mov */; };
 		8792AA121E4F306900BA95B0 /* EKMediaPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8792AA111E4F306900BA95B0 /* EKMediaPageViewController.swift */; };
 		8792AA181E4F5B3C00BA95B0 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8792AA151E4F5B3C00BA95B0 /* 6.jpg */; };
 		8792AA191E4F5B3C00BA95B0 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8792AA161E4F5B3C00BA95B0 /* 5.jpg */; };
@@ -65,8 +66,8 @@
 		877668681E40C8110087A4B7 /* EKListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKListTableViewCell.swift; sourceTree = "<group>"; };
 		877668691E40C8110087A4B7 /* EKListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKListTableViewCell.xib; sourceTree = "<group>"; };
 		8776686C1E40CDE20087A4B7 /* MediaListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaListTableViewController.swift; sourceTree = "<group>"; };
+		8778FC141E524B6500516D24 /* dance.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = dance.mov; sourceTree = "<group>"; };
 		8792AA111E4F306900BA95B0 /* EKMediaPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKMediaPageViewController.swift; path = ../EKMediaPageViewController.swift; sourceTree = "<group>"; };
-		8792AA131E4F5A9D00BA95B0 /* dance.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dance.mp4; sourceTree = "<group>"; };
 		8792AA151E4F5B3C00BA95B0 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
 		8792AA161E4F5B3C00BA95B0 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		8792AA171E4F5B3C00BA95B0 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
@@ -196,7 +197,7 @@
 				8792AA161E4F5B3C00BA95B0 /* 5.jpg */,
 				8792AA151E4F5B3C00BA95B0 /* 6.jpg */,
 				87A96DBB1E337CEA00D36B0E /* video_1mb.mp4 */,
-				8792AA131E4F5A9D00BA95B0 /* dance.mp4 */,
+				8778FC141E524B6500516D24 /* dance.mov */,
 				8792AA1E1E4F672700BA95B0 /* train.mov */,
 			);
 			path = Resources;
@@ -309,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8778FC151E524B6500516D24 /* dance.mov in Resources */,
 				8792AA1A1E4F5B3C00BA95B0 /* 4.jpg in Resources */,
 				8792AA191E4F5B3C00BA95B0 /* 5.jpg in Resources */,
 				87A96DC01E337CEA00D36B0E /* video_1mb.mp4 in Resources */,

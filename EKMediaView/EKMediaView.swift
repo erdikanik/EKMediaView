@@ -211,10 +211,12 @@ fileprivate extension EKMediaView {
     
         for media in medias {
             
-            let url = URL(fileURLWithPath: media.url)
-            let playerItem = AVPlayerItem(url: url)
+            if media.type == .Video {
+                let url = URL(fileURLWithPath: media.url)
+                let playerItem = AVPlayerItem(url: url)
             
-            playerItems?.append(playerItem)
+                playerItems?.append(playerItem)
+            }
         }
     }
 }
