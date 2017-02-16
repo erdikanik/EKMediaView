@@ -317,10 +317,10 @@ fileprivate extension EKMediaView {
     private func setPageControlConstraints() {
         
         addSubview(pageControl)
-        translatesAutoresizingMaskIntoConstraints = false
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
         
-        pageControl.centerXAnchor .constraint(equalTo: centerXAnchor).isActive = true
-        pageControl.bottomAnchor .constraint(equalTo: bottomAnchor, constant: EKMediaView.kPageControlBottomConstant).isActive = true
+        pageControl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: EKMediaView.kPageControlBottomConstant).isActive = true
     
         pageControl.currentPage = 0
     }
