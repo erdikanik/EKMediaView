@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ctk-CA-xDE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1Rh-FA-sVl">
+            <objects>
+                <navigationController id="ctk-CA-xDE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="feE-2Y-Fty">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dtz-S4-Ht3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXk-JR-ZoT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-767" y="81"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EKMediaView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAZ-Uk-Wuv">
+                                <rect key="frame" x="149" y="100" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="PKT-9d-UWx" kind="show" id="pN8-9a-f5o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7d-uJ-L6z">
+                                <rect key="frame" x="149" y="157" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="7Ub-CX-dJw" kind="show" id="xy7-n6-1UU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ald-Ae-n1W"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="82"/>
+        </scene>
+        <!--Media List Table View Controller-->
+        <scene sceneID="y4z-zd-QlR">
+            <objects>
+                <tableViewController id="PKT-9d-UWx" customClass="MediaListTableViewController" customModule="EKMediaView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kvV-UO-GBl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="PKT-9d-UWx" id="Y2N-z5-saR"/>
+                            <outlet property="delegate" destination="PKT-9d-UWx" id="cGx-Zp-sRH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CgD-kV-2rQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="-224"/>
+        </scene>
+        <!--Media Page View Controller-->
+        <scene sceneID="Z8A-92-ROk">
+            <objects>
+                <viewController id="7Ub-CX-dJw" customClass="EKMediaPageViewController" customModule="EKMediaView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8h4-5s-GVS"/>
+                        <viewControllerLayoutGuide type="bottom" id="RmV-6O-cMv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Te5-SP-7Wz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-ov-O1D" customClass="EKMediaView" customModule="EKMediaView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="jV8-vY-jKd"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Q53-Ta-fqd" appends="YES" id="PjX-DA-omq"/>
+                                </connections>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxZ-Lp-gin">
+                                <rect key="frame" x="319" y="324" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Gkm-sz-a6S"/>
+                                    <constraint firstAttribute="width" constant="20" id="b6f-mG-pLa"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="mute"/>
+                                <connections>
+                                    <action selector="muteButtonTapped:" destination="7Ub-CX-dJw" eventType="touchUpInside" id="tAu-4h-ldw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kam-jK-hSa" userLabel="Content">
+                                <rect key="frame" x="36" y="344" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.69803921568627447" green="0.58823529411764708" blue="0.0" alpha="0.68255029965753422" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pxZ-Lp-gin" secondAttribute="trailing" constant="20" id="5Rh-hk-ymG"/>
+                            <constraint firstItem="kam-jK-hSa" firstAttribute="leading" secondItem="Te5-SP-7Wz" secondAttribute="leadingMargin" constant="20" id="6Gx-5K-QqW"/>
+                            <constraint firstItem="pxZ-Lp-gin" firstAttribute="top" secondItem="xWk-ov-O1D" secondAttribute="bottom" constant="-40" id="E51-LQ-2e1"/>
+                            <constraint firstAttribute="trailing" secondItem="xWk-ov-O1D" secondAttribute="trailing" id="UY1-W1-Xlj"/>
+                            <constraint firstItem="xWk-ov-O1D" firstAttribute="leading" secondItem="Te5-SP-7Wz" secondAttribute="leading" id="YL1-ag-UYv"/>
+                            <constraint firstItem="xWk-ov-O1D" firstAttribute="top" secondItem="8h4-5s-GVS" secondAttribute="bottom" id="vGi-9A-d9c"/>
+                            <constraint firstItem="kam-jK-hSa" firstAttribute="bottom" secondItem="xWk-ov-O1D" secondAttribute="bottom" constant="-20" id="wNA-6d-7d4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="content" destination="kam-jK-hSa" id="W8j-NU-3Mn"/>
+                        <outlet property="mediaView" destination="xWk-ov-O1D" id="hTS-0O-JJx"/>
+                        <outlet property="muteButton" destination="pxZ-Lp-gin" id="ZJr-mO-Mn7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Dg-KX-TUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Q53-Ta-fqd">
+                    <connections>
+                        <action selector="mediaViewTapped:" destination="7Ub-CX-dJw" id="1tD-uU-vgk"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1036" y="419"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mute" width="20" height="20"/>
+    </resources>
+</document>

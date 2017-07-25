@@ -1,0 +1,6 @@
+framework module EKMediaView {
+  umbrella header "EKMediaView-umbrella.h"
+
+  export *
+  module * { export * }
+}

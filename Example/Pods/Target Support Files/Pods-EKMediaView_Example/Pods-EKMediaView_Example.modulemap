@@ -1,0 +1,6 @@
+framework module Pods_EKMediaView_Example {
+  umbrella header "Pods-EKMediaView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

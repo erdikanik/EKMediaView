@@ -1,0 +1,16 @@
+PODS:
+  - EKMediaView (0.1.0)
+
+DEPENDENCIES:
+  - EKMediaView (from `../`)
+
+EXTERNAL SOURCES:
+  EKMediaView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  EKMediaView: cad8eece3e57bfd004ef302c8531ed67fd8afcf4
+
+PODFILE CHECKSUM: 662cbb9068dfb9a399e90e4fedc509b400987ed3
+
+COCOAPODS: 1.2.1

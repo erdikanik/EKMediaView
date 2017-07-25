@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'EKMediaView_Example' do
+  pod 'EKMediaView', :path => '../'
+
+end
