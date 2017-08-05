@@ -23,10 +23,6 @@ it, simply add the following line to your Podfile:
 pod 'EKMediaView', :git => 'https://github.com/erdikanik/EKMediaView.git'
 ```
 
-## Author
-
-erdikanik, erdikanik@gmail.com
-
 ## License
 
 EKMediaView is available under the MIT license. See the LICENSE file for more info.
