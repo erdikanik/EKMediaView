@@ -7,7 +7,8 @@
 
 ## Example
 
-![Alt text](../master/Gifs/paging.gif)
+![Screenshot](Example/Gifs/paging.gif "Paging")<br />
+![Screenshot](Example/Gifs/scroll.gif "Scrolling")
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
