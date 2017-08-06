@@ -48,20 +48,20 @@ class MediaListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:EKListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "EKListTableViewCell", for: indexPath) as! EKListTableViewCell
         
-        let media = MockManager().mediaViews()[indexPath.row]
-        
-        cell.layoutIfNeeded()
-        cell.setMedia(media: media)
-        
         cell.titleLabel.text = "Index: \(indexPath.row)"
-        cell.mediaView.muted = true
-        
         return cell
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         let cell:EKListTableViewCell = cell as! EKListTableViewCell
+
+        let media = MockManager().mediaViews()[indexPath.row]
+        
+        cell.layoutIfNeeded()
+        cell.setMedia(media: media)
+
+        cell.mediaView.muted = true
         
         if let mediaView = cell.mediaView {
             mediaView.stopAll = false
