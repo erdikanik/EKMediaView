@@ -55,11 +55,13 @@ class MediaListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         let cell:EKListTableViewCell = cell as! EKListTableViewCell
-
-        let media = MockManager().mediaViews()[indexPath.row]
         
-        cell.layoutIfNeeded()
-        cell.setMedia(media: media)
+        if cell.mediaView.medias == nil {
+            let media = MockManager().mediaViews()[indexPath.row]
+            
+            cell.layoutIfNeeded()
+            cell.setMedia(media: media)
+        }
 
         cell.mediaView.muted = true
         
